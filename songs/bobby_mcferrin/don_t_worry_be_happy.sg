@@ -6,8 +6,7 @@
   \cover
   \gtab{C}{X32010}
   \gtab{G}{320003}
-  \gtab{F}{1:022100}
-  \gtab{Fm}{1:022000}
+  \gtab{Am}{002210}
 
   \begin{verse}
     \[C]Here's a little song I wrote
@@ -30,5 +29,16 @@
     Uh uh uh uh \[C]uh
     Don't worry, be happy
   \end{chorus}
+
+  \begin{verse}
+    Ain't got no place to lay your head
+    Somebody came and took your bed
+    Don't worry, be happy
+  \end{verse}
+  \begin{verse}
+  The landlord say your rent is late
+  He may have to litigate
+  Don't worry, be happy
+  \end{verse}
 
 \endsong
