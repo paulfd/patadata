@@ -1,0 +1,232 @@
+\documentclass[fontsize=7pt]{scrartcl}
+\usepackage[french,english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{songs}
+\usepackage{suffix}
+\usepackage{hyperref}
+\renewcommand{\songtarget}[2]
+{\pdfbookmark[#1]{\thesongnum. \songtitle}{#2}}
+\renewcommand{\songlink}[2]{\hyperlink{#1}{#2}}
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{
+   \usepackage{url}
+   \newcommand{\phantomsection}{}
+   \newcommand{\hyperlink}[2]{#2}
+   \newcommand{\href}[2]{\expandafter\url\expandafter{#1}}
+}
+\makeatother
+\newenvironment{bridge}{\begin{verse*}\itshape}{\end{verse*}} 
+% \newenvironment{repeatedchords}{}{} 
+\def\cover{}
+\def\album{}
+\newcommand\utab[1]{}
+\newcommand\lilypond[1]{}
+\renewcommand\gtab[2]{}
+\WithSuffix\newcommand\gtab*[2]{}
+\def\Intro{Intro:}
+\def\Outro{Outro:}
+\def\Chorus{Refrain:}
+\def\Verse{Couplet:}
+\title{Carnet de chants}
+\author{Paul Ferrand}
+
+\newindex{titleidx}{titleidx}
+\newauthorindex{authidx}{authoridx}
+
+\authignoreword{unknown}
+\authbyword{by}
+\authsepword{and}
+\notenamesout{La}{Si}{Do}{R\'e}{Mi}{Fa}{Sol}
+
+\usepackage[sfdefault,condensed]{roboto}
+
+\makeatletter
+\renewcommand{\chorusfont}{\itshape}
+\def\@chordfont{\itshape}
+% \definecolor{ChordColor}{HTML}{000000}
+\renewcommand{\printchord}[1]{\@chordfont\textcolor{ChordColor}{#1}}
+\renewcommand{\lyricfont}{}
+\newsongkey{cover}{\let\songcover\@empty}{\def\songcover{#1}}
+\newsongkey{album}{\let\songalbum\@empty}{\def\songalbum{#1}}
+\newsongkey{url}{\let\songurl\@empty}{\def\songurl{#1}}
+\newsongkey{original}{\let\songoriginal\@empty}{\def\songoriginal{#1}}
+
+\newcommand{\CB@chordshidden}{%
+    \def\SB@bracket##1]{\ignorespaces}%
+    \let\SB@rechord\relax%
+    \let\SB@ch\SB@ch@off%
+    \ifSB@measurespec%
+    \ifmeasures\SB@measureson\else\SB@measuresoff\fi%
+    \else%
+    \SB@measuresoff%
+    \fi%
+    \ifSB@preamble\let\colbotglue{\z@\@plus.5\textheight}\fi%
+    \SB@setbaselineskip%
+}
+\newenvironment{repeatedchords}{\CB@chordshidden}{}
+\makeatother
+
+
+\usepackage[
+ left=4pt,
+ foot=0pt,
+ bottom=4pt,
+ right=4pt,
+ top=4pt,
+ paperwidth=90mm,
+ paperheight=117mm
+]{geometry}
+
+% Remove song numbers
+% \nosongnumbers
+% \renewcommand{\printsongnum}[1]{\Huge \bfseries \hspace{4pt}#1}
+
+\pagestyle{empty}
+
+% Shorter musicnotes
+\renewcommand\musicnote[1]{#1}
+\renewcommand\printchord[1]{\sffamily\itshape\footnotesize#1}
+
+% Show only authors
+\renewcommand{\extendprelude}{{\bfseries\showauthors}}
+
+% Denser verses
+\versesep=4pt
+\columnsep=4pt
+
+% Remove separating lines between songs and thinner chorus line
+\setlength{\sbarheight}{0pt}
+\setlength{\cbarwidth}{1pt}
+\renewcommand{\clineparams}{\lineskiplimit=1pt\lineskip=1pt}
+
+% Single spacing when no chords
+\setlength\baselineadj{-\baselineskip}
+\setlength{\versenumwidth}{0cm}
+
+
+\begin{document}
+
+\maketitle
+\newpage
+\showindex[2]{Par titre}{titleidx}
+\showindex[2]{Par auteur}{authidx}
+\newpage
+\setcounter{songnum}{1}%
+
+\begin{songs}{titleidx,authidx}
+\input{songs/3_cafes_gourmands/a_nos_souvenirs.sg}
+\input{songs/au_petit_bonheur/je_veux_du_soleil.sg}
+\input{songs/aldebert/la_norme_et_la_marge.sg}
+\input{songs/aldebert/amoureuse.sg}
+\input{songs/black_m/sur_ma_route.sg}
+\input{songs/benabar/le_diner.sg}
+\input{songs/benabar/a_notre_sante.sg}
+\input{songs/bigflo_et_oli/gangsta.sg}
+\input{songs/bigflo_et_oli/dommage.sg}
+\input{songs/bobby_mcferrin/don_t_worry_be_happy.sg}
+\input{songs/boby_lapointe/sentimental_bourreau.sg}
+\input{songs/charles_aznavour/emmenez-moi.sg}
+\input{songs/claude_nougaro/armstrong.sg}
+\input{songs/cookie_dingler/femme_liberee.sg}
+\input{songs/debout_sur_le_zinc/les_mots_d_amour.sg}
+\input{songs/ed_sheeran/castle_on_the_hill.sg}
+\input{songs/edith_piaf/la_foule.sg}
+\input{songs/eric_clapton/layla.sg}
+\input{songs/francis_cabrel/je_t_aimais_je_t_aime_et_je_t_aimerai.sg}
+\input{songs/georges_brassens/la_mauvaise_reputation.sg}
+\input{songs/georges_brassens/les_copains_d_abord.sg}
+\input{songs/georges_brassens/le_gorille.sg}
+\input{songs/georges_brassens/pour_me_rendre_a_mon_bureau.sg}
+\input{songs/gregoire/toi_moi.sg}
+\input{songs/hugues_aufray/debout_les_gars.sg}
+\input{songs/hugues_aufray/le_petit_ane_gris.sg}
+\input{songs/hugues_aufray/santiano.sg}
+\input{songs/hugues_aufray/le_bon_dieu_s_enervait.sg}
+\input{songs/indochine/j_ai_demande_a_la_lune.sg}
+\input{songs/indochine/l_aventurier.sg}
+\input{songs/israel_kamakawiwo_ole/somewhere_over_the_rainbow.sg}
+\input{songs/jason_marz/i_m_yours.sg}
+\input{songs/jean-jacques_goldman/ensemble.sg}
+\input{songs/jean-jacques_goldman/et_l_on_y_peut_rien_short.sg}
+\input{songs/jean-jacques_goldman/famille.sg}
+\input{songs/jean-jacques_goldman/il_changeait_la_vie.sg}
+\input{songs/jean-jacques_goldman/je_te_donne.sg}
+\input{songs/jean-jacques_goldman/on_ira.sg}
+\input{songs/joe_dassin/siffler_sur_la_colline.sg}
+\input{songs/joe_dassin/les_champs_elysees.sg}
+\input{songs/josh_white/one_meatball.sg}
+\input{songs/la_compagnie_creole/ca_fait_rire_les_oiseaux.sg}
+\input{songs/leonard_cohen/hallelujah.sg}
+\input{songs/les_cowboys_fringants/etoiles_filantes.sg}
+\input{songs/les_cowboys_fringants/hannah_short.sg}
+\input{songs/les_cowboys_fringants/ti-cul.sg}
+\input{songs/les_cowboys_fringants/paris_montreal.sg}
+\input{songs/les_fatals_picards/au_mariage_de_kevin_et_de_ma_soeur.sg}
+\input{songs/les_fatals_picards/la_securite_de_l_emploi.sg}
+\input{songs/les_fatals_picards/l_amour_a_la_francaise.sg}
+\input{songs/les_fatals_picards/mon_pere_etait_tellement_de_gauche.sg}
+\input{songs/les_fatals_picards/le_retour_a_la_terre.sg}
+\input{songs/les_ogres_de_barback/3_-_0.sg}
+\input{songs/les_ogres_de_barback/contes_vents_et_marees.sg}
+\input{songs/les_ogres_de_barback/rue_de_paname.sg}
+\input{songs/les_ogres_de_barback/solene_de_grenoble.sg}
+\input{songs/les_tetes_raides/l_iditente.sg}
+\input{songs/les_wriggles/julie_la_petite_olive.sg}
+\input{songs/louise_attaque/je_t_emmene_au_vent.sg}
+\input{songs/louise_attaque/les_nuits_parisiennes.sg}
+\input{songs/louise_attaque/lea.sg}
+\input{songs/louise_attaque/ton_invitation.sg}
+\input{songs/lucienne_delyle/mon_amant_de_saint_jean.sg}
+\input{songs/maitre_gims/bella.sg}
+\input{songs/maitre_gims/la_meme.sg}
+\input{songs/manau/la_tribu_de_dana.sg}
+\input{songs/max_boubil/j_aime_les_moches.sg}
+\input{songs/maxime_le_forestier/mon_frere.sg}
+\input{songs/michel_sardou/en_chantant.sg}
+\input{songs/noir_desir/le_vent_nous_portera.sg}
+\input{songs/oldelaf_et_monsieur_d/cafe.sg}
+\input{songs/oldelaf_et_monsieur_d/la_tristitude.sg}
+\input{songs/oldelaf_et_monsieur_d/nathalie.sg}
+\input{songs/pep_s/liberta.sg}
+\input{songs/pierre_perret/au_cafe_du_canal.sg}
+\input{songs/pierre_perret/lily.sg}
+\input{songs/pierre_perret/les_jolies_colonies_de_vacances.sg}
+\input{songs/pierre_perret/mon_ptit_loup.sg}
+\input{songs/renan_luce/la_lettre.sg}
+\input{songs/rise_against/hero_of_war.sg}
+\input{songs/ray_charles/hit_the_road.sg}
+\input{songs/scouts/train_d_enfer.sg}
+\input{songs/scouts/le_monde_m_appelle.sg}
+\input{songs/scouts/au_coeur_de_la_planete.sg}
+\input{songs/amplitude/avec_ma_tribu.sg}
+\input{songs/amplitude/chant_des_equipages.sg}
+\input{songs/amplitude/comme_un_appel.sg}
+\input{songs/amplitude/la_caravane.sg}
+\input{songs/amplitude/paris_d_avenir.sg}
+\input{songs/marc_durand/le_monsieur_en_chemise.sg}
+\input{songs/jeremie_dazy/je_prends_le_relais.sg}
+\input{songs/sinsemilia/tout_le_bonheur_du_monde.sg}
+\input{songs/stromae/papaoutai.sg}
+\input{songs/telephone/cendrillon.sg}
+\input{songs/the_beatles/let_it_be.sg}
+\input{songs/the_beatles/yesterday.sg}
+\input{songs/the_pogues/dirty_old_town.sg}
+\input{songs/traditionnel/bonsoir_tous_a_la_ronde.sg}
+\input{songs/traditionnel/l_homme_de_cromagnon.sg}
+\input{songs/traditionnel/trois_ptits_chats.sg}
+\input{songs/traditionnel/vent_frais.sg}
+\input{songs/tri_yann/la_jument_de_michao.sg}
+\input{songs/tri_yann/les_filles_des_forges.sg}
+\input{songs/tri_yann/si_mort_a_mors.sg}
+\input{songs/tryo/ce_que_l_on_s_aime.sg}
+\input{songs/tryo/l_hymne_de_nos_campagnes.sg}
+\input{songs/vianney/pas_la.sg}
+\input{songs/vianney/je_te_deteste.sg}
+\input{songs/vianney/je_m_en_vais.sg}
+\input{songs/voyou/il_neige.sg}
+\input{songs/yannick_noah/la_voix_des_sages.sg}
+\input{songs/zebda/tomber_la_chemise.sg}
+\end{songs}
+\end{document}
