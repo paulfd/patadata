@@ -1,0 +1,726 @@
+% Copyright (C) 2017 Paul Ferrand
+% Copyright (C) 2014 The Patacrep Team
+% Copyright (C) 2009-2010 Romain Goffe, Alexandre Dupas
+% Copyright (C) 2008 Kevin W. Hamlen
+%
+% This program is free software; you can redistribute it and/or
+% modify it under the terms of the GNU General Public License
+% as published by the Free Software Foundation; either version 2
+% of the License, or (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program; if not, write to the Free Software
+% Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+% MA  02110-1301, USA.
+
+
+% begin document
+
+
+
+
+%% Automatically generated document.
+%% You may edit this file but all changes will be overwritten.
+%% If you want to change this document, have a look at
+%% the templating system.
+%%
+%% Generated using Songbook <http://www.patacrep.com>
+
+\makeatletter
+\def\input@path{ %
+        {/home/paul/source/patadata/books/../templates/styles/} %
+        {/home/paul/source/patadata/books/templates/styles/} %
+        {/home/paul/.local/lib/python3.7/site-packages/patacrep/data/templates/styles/} %
+}
+\makeatother
+
+\documentclass[
+    fontsize=7pt
+    ]{scrartcl}
+
+\usepackage[
+chorded,
+onesongperpage,
+guitar,
+    ]{patacrep}
+
+
+% Redefining the preambule
+\PassOptionsToPackage{english}{babel}
+\PassOptionsToPackage{french}{babel}
+\usepackage[french]{babel}
+\lang{french}
+
+\usepackage{hyperref}
+\renewcommand{\songtarget}[2]
+{\pdfbookmark[#1]{\thesongnum. \songtitle}{#2}}
+\renewcommand{\songlink}[2]{\hyperlink{#1}{#2}}
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{
+   \usepackage{url}
+   \newcommand{\phantomsection}{}
+   \newcommand{\hyperlink}[2]{#2}
+   \newcommand{\href}[2]{\expandafter\url\expandafter{#1}}
+}
+\makeatother
+
+\title{Carnet de chants}
+\author{Paul Ferrand}
+
+\newindex{titleidx}{paul_title}
+\newauthorindex{authidx}{paul_auth}
+
+\authignoreword{unknown}
+\authbyword{by}
+\authsepword{and}
+
+\notenamesout{La}{Si}{Do}{R\'e}{Mi}{Fa}{Sol}
+
+\usepackage{licence}
+
+
+\usepackage[sfdefault,condensed]{roboto}
+
+\makeatletter
+\renewcommand{\chorusfont}{%
+   \itshape %
+}
+
+\def\@chordfont{%
+   \itshape %
+}
+\definecolor{ChordColor}{HTML}{000000}
+\renewcommand{\printchord}[1]{\@chordfont\textcolor{ChordColor}{#1}}
+
+\renewcommand{\lyricfont}{%
+}
+\makeatother
+
+
+\usepackage[
+ left=4pt,
+ foot=0pt,
+ bottom=4pt,
+ right=4pt,
+ top=4pt,
+ paperwidth=90mm,
+ paperheight=117mm
+]{geometry}
+
+% Remove song numbers
+% \nosongnumbers
+% \renewcommand{\printsongnum}[1]{\Huge \bfseries \hspace{4pt}#1}
+
+\pagestyle{empty}
+
+% Shorter musicnotes
+\renewcommand\musicnote[1]{#1}
+\renewcommand\printchord[1]{\sffamily\itshape\footnotesize#1}
+% Show only authors
+\renewcommand{\extendprelude}{{\bfseries\showauthors}}
+% Denser verses
+\versesep=4pt
+\columnsep=4pt
+% Remove separating lines between songs and thinner chorus line
+\setlength{\sbarheight}{0pt}
+\setlength{\cbarwidth}{1pt}
+\renewcommand{\clineparams}{
+\lineskiplimit=1pt
+\lineskip=1pt
+}
+
+% Single spacing when no chords
+\setlength\baselineadj{-\baselineskip}
+\setlength{\versenumwidth}{0cm}
+
+\begin{document}
+
+\maketitle
+
+% Licence
+% \newpage
+% \input{license-small}
+\newpage
+
+\showindex{\songindexname}{titleidx}
+\showindex{\authorindexname}{authidx}
+
+% list of chords
+\ifdiagrampage
+   \phantomsection
+   \addcontentsline{toc}{section}{\chordlistname}
+   \chords
+\fi
+\setcounter{songnum}{1}%
+
+\phantomsection
+\addcontentsline{toc}{section}{\songlistname}
+
+\begin{songs}{titleidx,authidx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/3_cafes_gourmands/a_nos_souvenirs.sg
+
+\import{/home/paul/source/patadata/songs/3_cafes_gourmands/}{a_nos_souvenirs.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/au_petit_bonheur/je_veux_du_soleil.sg
+
+\import{/home/paul/source/patadata/songs/au_petit_bonheur/}{je_veux_du_soleil.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/aldebert/la_norme_et_la_marge.sg
+
+\import{/home/paul/source/patadata/songs/aldebert/}{la_norme_et_la_marge.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/aldebert/amoureuse.sg
+
+\import{/home/paul/source/patadata/songs/aldebert/}{amoureuse.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/black_m/sur_ma_route.sg
+
+\import{/home/paul/source/patadata/songs/black_m/}{sur_ma_route.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/benabar/le_diner.sg
+
+\import{/home/paul/source/patadata/songs/benabar/}{le_diner.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/benabar/a_notre_sante.sg
+
+\import{/home/paul/source/patadata/songs/benabar/}{a_notre_sante.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/bigflo_et_oli/gangsta.sg
+
+\import{/home/paul/source/patadata/songs/bigflo_et_oli/}{gangsta.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/bigflo_et_oli/dommage.sg
+
+\import{/home/paul/source/patadata/songs/bigflo_et_oli/}{dommage.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/bobby_mcferrin/don_t_worry_be_happy.sg
+
+\import{/home/paul/source/patadata/songs/bobby_mcferrin/}{don_t_worry_be_happy.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/boby_lapointe/sentimental_bourreau.sg
+
+\import{/home/paul/source/patadata/songs/boby_lapointe/}{sentimental_bourreau.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/charles_aznavour/emmenez-moi.sg
+
+\import{/home/paul/source/patadata/songs/charles_aznavour/}{emmenez-moi.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/claude_nougaro/armstrong.sg
+
+\import{/home/paul/source/patadata/songs/claude_nougaro/}{armstrong.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/cookie_dingler/femme_liberee.sg
+
+\import{/home/paul/source/patadata/songs/cookie_dingler/}{femme_liberee.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/debout_sur_le_zinc/les_mots_d_amour.sg
+
+\import{/home/paul/source/patadata/songs/debout_sur_le_zinc/}{les_mots_d_amour.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/ed_sheeran/castle_on_the_hill.sg
+
+\import{/home/paul/source/patadata/songs/ed_sheeran/}{castle_on_the_hill.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/edith_piaf/la_foule.sg
+
+\import{/home/paul/source/patadata/songs/edith_piaf/}{la_foule.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/eric_clapton/layla.sg
+
+\import{/home/paul/source/patadata/songs/eric_clapton/}{layla.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/francis_cabrel/je_t_aimais_je_t_aime_et_je_t_aimerai.sg
+
+\import{/home/paul/source/patadata/songs/francis_cabrel/}{je_t_aimais_je_t_aime_et_je_t_aimerai.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/georges_brassens/la_mauvaise_reputation.sg
+
+\import{/home/paul/source/patadata/songs/georges_brassens/}{la_mauvaise_reputation.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/georges_brassens/les_copains_d_abord.sg
+
+\import{/home/paul/source/patadata/songs/georges_brassens/}{les_copains_d_abord.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/georges_brassens/le_gorille.sg
+
+\import{/home/paul/source/patadata/songs/georges_brassens/}{le_gorille.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/georges_brassens/pour_me_rendre_a_mon_bureau.sg
+
+\import{/home/paul/source/patadata/songs/georges_brassens/}{pour_me_rendre_a_mon_bureau.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/gregoire/toi_moi.sg
+
+\import{/home/paul/source/patadata/songs/gregoire/}{toi_moi.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/hugues_aufray/debout_les_gars.sg
+
+\import{/home/paul/source/patadata/songs/hugues_aufray/}{debout_les_gars.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/hugues_aufray/le_petit_ane_gris.sg
+
+\import{/home/paul/source/patadata/songs/hugues_aufray/}{le_petit_ane_gris.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/hugues_aufray/santiano.sg
+
+\import{/home/paul/source/patadata/songs/hugues_aufray/}{santiano.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/hugues_aufray/le_bon_dieu_s_enervait.sg
+
+\import{/home/paul/source/patadata/songs/hugues_aufray/}{le_bon_dieu_s_enervait.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/indochine/j_ai_demande_a_la_lune.sg
+
+\import{/home/paul/source/patadata/songs/indochine/}{j_ai_demande_a_la_lune.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/indochine/l_aventurier.sg
+
+\import{/home/paul/source/patadata/songs/indochine/}{l_aventurier.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/israel_kamakawiwo_ole/somewhere_over_the_rainbow.sg
+
+\import{/home/paul/source/patadata/songs/israel_kamakawiwo_ole/}{somewhere_over_the_rainbow.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/jason_marz/i_m_yours.sg
+
+\import{/home/paul/source/patadata/songs/jason_marz/}{i_m_yours.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/jean-jacques_goldman/ensemble.sg
+
+\import{/home/paul/source/patadata/songs/jean-jacques_goldman/}{ensemble.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/jean-jacques_goldman/et_l_on_y_peut_rien_short.sg
+
+\import{/home/paul/source/patadata/songs/jean-jacques_goldman/}{et_l_on_y_peut_rien_short.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/jean-jacques_goldman/famille.sg
+
+\import{/home/paul/source/patadata/songs/jean-jacques_goldman/}{famille.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/jean-jacques_goldman/il_changeait_la_vie.sg
+
+\import{/home/paul/source/patadata/songs/jean-jacques_goldman/}{il_changeait_la_vie.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/jean-jacques_goldman/je_te_donne.sg
+
+\import{/home/paul/source/patadata/songs/jean-jacques_goldman/}{je_te_donne.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/jean-jacques_goldman/on_ira.sg
+
+\import{/home/paul/source/patadata/songs/jean-jacques_goldman/}{on_ira.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/joe_dassin/siffler_sur_la_colline.sg
+
+\import{/home/paul/source/patadata/songs/joe_dassin/}{siffler_sur_la_colline.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/joe_dassin/les_champs_elysees.sg
+
+\import{/home/paul/source/patadata/songs/joe_dassin/}{les_champs_elysees.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/josh_white/one_meatball.sg
+
+\import{/home/paul/source/patadata/songs/josh_white/}{one_meatball.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/la_compagnie_creole/ca_fait_rire_les_oiseaux.sg
+
+\import{/home/paul/source/patadata/songs/la_compagnie_creole/}{ca_fait_rire_les_oiseaux.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/leonard_cohen/hallelujah.sg
+
+\import{/home/paul/source/patadata/songs/leonard_cohen/}{hallelujah.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_cowboys_fringants/etoiles_filantes.sg
+
+\import{/home/paul/source/patadata/songs/les_cowboys_fringants/}{etoiles_filantes.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_cowboys_fringants/hannah_short.sg
+
+\import{/home/paul/source/patadata/songs/les_cowboys_fringants/}{hannah_short.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_cowboys_fringants/ti-cul.sg
+
+\import{/home/paul/source/patadata/songs/les_cowboys_fringants/}{ti-cul.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_cowboys_fringants/paris_montreal.sg
+
+\import{/home/paul/source/patadata/songs/les_cowboys_fringants/}{paris_montreal.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_fatals_picards/au_mariage_de_kevin_et_de_ma_soeur.sg
+
+\import{/home/paul/source/patadata/songs/les_fatals_picards/}{au_mariage_de_kevin_et_de_ma_soeur.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_fatals_picards/la_securite_de_l_emploi.sg
+
+\import{/home/paul/source/patadata/songs/les_fatals_picards/}{la_securite_de_l_emploi.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_fatals_picards/l_amour_a_la_francaise.sg
+
+\import{/home/paul/source/patadata/songs/les_fatals_picards/}{l_amour_a_la_francaise.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_fatals_picards/mon_pere_etait_tellement_de_gauche.sg
+
+\import{/home/paul/source/patadata/songs/les_fatals_picards/}{mon_pere_etait_tellement_de_gauche.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_fatals_picards/le_retour_a_la_terre.sg
+
+\import{/home/paul/source/patadata/songs/les_fatals_picards/}{le_retour_a_la_terre.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_ogres_de_barback/3_-_0.sg
+
+\import{/home/paul/source/patadata/songs/les_ogres_de_barback/}{3_-_0.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_ogres_de_barback/contes_vents_et_marees.sg
+
+\import{/home/paul/source/patadata/songs/les_ogres_de_barback/}{contes_vents_et_marees.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_ogres_de_barback/rue_de_paname.sg
+
+\import{/home/paul/source/patadata/songs/les_ogres_de_barback/}{rue_de_paname.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_ogres_de_barback/solene_de_grenoble.sg
+
+\import{/home/paul/source/patadata/songs/les_ogres_de_barback/}{solene_de_grenoble.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_tetes_raides/l_iditente.sg
+
+\import{/home/paul/source/patadata/songs/les_tetes_raides/}{l_iditente.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/les_wriggles/julie_la_petite_olive.sg
+
+\import{/home/paul/source/patadata/songs/les_wriggles/}{julie_la_petite_olive.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/louise_attaque/je_t_emmene_au_vent.sg
+
+\import{/home/paul/source/patadata/songs/louise_attaque/}{je_t_emmene_au_vent.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/louise_attaque/les_nuits_parisiennes.sg
+
+\import{/home/paul/source/patadata/songs/louise_attaque/}{les_nuits_parisiennes.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/louise_attaque/lea.sg
+
+\import{/home/paul/source/patadata/songs/louise_attaque/}{lea.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/louise_attaque/ton_invitation.sg
+
+\import{/home/paul/source/patadata/songs/louise_attaque/}{ton_invitation.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/lucienne_delyle/mon_amant_de_saint_jean.sg
+
+\import{/home/paul/source/patadata/songs/lucienne_delyle/}{mon_amant_de_saint_jean.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/maitre_gims/bella.sg
+
+\import{/home/paul/source/patadata/songs/maitre_gims/}{bella.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/maitre_gims/la_meme.sg
+
+\import{/home/paul/source/patadata/songs/maitre_gims/}{la_meme.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/manau/la_tribu_de_dana.sg
+
+\import{/home/paul/source/patadata/songs/manau/}{la_tribu_de_dana.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/max_boubil/j_aime_les_moches.sg
+
+\import{/home/paul/source/patadata/songs/max_boubil/}{j_aime_les_moches.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/maxime_le_forestier/mon_frere.sg
+
+\import{/home/paul/source/patadata/songs/maxime_le_forestier/}{mon_frere.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/michel_sardou/en_chantant.sg
+
+\import{/home/paul/source/patadata/songs/michel_sardou/}{en_chantant.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/noir_desir/le_vent_nous_portera.sg
+
+\import{/home/paul/source/patadata/songs/noir_desir/}{le_vent_nous_portera.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/oldelaf_et_monsieur_d/cafe.sg
+
+\import{/home/paul/source/patadata/songs/oldelaf_et_monsieur_d/}{cafe.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/oldelaf_et_monsieur_d/la_tristitude.sg
+
+\import{/home/paul/source/patadata/songs/oldelaf_et_monsieur_d/}{la_tristitude.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/oldelaf_et_monsieur_d/nathalie.sg
+
+\import{/home/paul/source/patadata/songs/oldelaf_et_monsieur_d/}{nathalie.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/pep_s/liberta.sg
+
+\import{/home/paul/source/patadata/songs/pep_s/}{liberta.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/pierre_perret/au_cafe_du_canal.sg
+
+\import{/home/paul/source/patadata/songs/pierre_perret/}{au_cafe_du_canal.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/pierre_perret/lily.sg
+
+\import{/home/paul/source/patadata/songs/pierre_perret/}{lily.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/pierre_perret/les_jolies_colonies_de_vacances.sg
+
+\import{/home/paul/source/patadata/songs/pierre_perret/}{les_jolies_colonies_de_vacances.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/pierre_perret/mon_ptit_loup.sg
+
+\import{/home/paul/source/patadata/songs/pierre_perret/}{mon_ptit_loup.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/renan_luce/la_lettre.sg
+
+\import{/home/paul/source/patadata/songs/renan_luce/}{la_lettre.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/rise_against/hero_of_war.sg
+
+\import{/home/paul/source/patadata/songs/rise_against/}{hero_of_war.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/ray_charles/hit_the_road.sg
+
+\import{/home/paul/source/patadata/songs/ray_charles/}{hit_the_road.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/scouts/train_d_enfer.sg
+
+\import{/home/paul/source/patadata/songs/scouts/}{train_d_enfer.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/scouts/le_monde_m_appelle.sg
+
+\import{/home/paul/source/patadata/songs/scouts/}{le_monde_m_appelle.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/scouts/au_coeur_de_la_planete.sg
+
+\import{/home/paul/source/patadata/songs/scouts/}{au_coeur_de_la_planete.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/amplitude/avec_ma_tribu.sg
+
+\import{/home/paul/source/patadata/songs/amplitude/}{avec_ma_tribu.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/amplitude/chant_des_equipages.sg
+
+\import{/home/paul/source/patadata/songs/amplitude/}{chant_des_equipages.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/amplitude/comme_un_appel.sg
+
+\import{/home/paul/source/patadata/songs/amplitude/}{comme_un_appel.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/amplitude/la_caravane.sg
+
+\import{/home/paul/source/patadata/songs/amplitude/}{la_caravane.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/amplitude/paris_d_avenir.sg
+
+\import{/home/paul/source/patadata/songs/amplitude/}{paris_d_avenir.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/marc_durand/le_monsieur_en_chemise.sg
+
+\import{/home/paul/source/patadata/songs/marc_durand/}{le_monsieur_en_chemise.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/jeremie_dazy/je_prends_le_relais.sg
+
+\import{/home/paul/source/patadata/songs/jeremie_dazy/}{je_prends_le_relais.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/sinsemilia/tout_le_bonheur_du_monde.sg
+
+\import{/home/paul/source/patadata/songs/sinsemilia/}{tout_le_bonheur_du_monde.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/stromae/papaoutai.sg
+
+\import{/home/paul/source/patadata/songs/stromae/}{papaoutai.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/telephone/cendrillon.sg
+
+\import{/home/paul/source/patadata/songs/telephone/}{cendrillon.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/the_beatles/let_it_be.sg
+
+\import{/home/paul/source/patadata/songs/the_beatles/}{let_it_be.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/the_beatles/yesterday.sg
+
+\import{/home/paul/source/patadata/songs/the_beatles/}{yesterday.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/the_pogues/dirty_old_town.sg
+
+\import{/home/paul/source/patadata/songs/the_pogues/}{dirty_old_town.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/traditionnel/bonsoir_tous_a_la_ronde.sg
+
+\import{/home/paul/source/patadata/songs/traditionnel/}{bonsoir_tous_a_la_ronde.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/traditionnel/l_homme_de_cromagnon.sg
+
+\import{/home/paul/source/patadata/songs/traditionnel/}{l_homme_de_cromagnon.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/traditionnel/trois_ptits_chats.sg
+
+\import{/home/paul/source/patadata/songs/traditionnel/}{trois_ptits_chats.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/traditionnel/vent_frais.sg
+
+\import{/home/paul/source/patadata/songs/traditionnel/}{vent_frais.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/tri_yann/la_jument_de_michao.sg
+
+\import{/home/paul/source/patadata/songs/tri_yann/}{la_jument_de_michao.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/tri_yann/les_filles_des_forges.sg
+
+\import{/home/paul/source/patadata/songs/tri_yann/}{les_filles_des_forges.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/tri_yann/si_mort_a_mors.sg
+
+\import{/home/paul/source/patadata/songs/tri_yann/}{si_mort_a_mors.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/tryo/ce_que_l_on_s_aime.sg
+
+\import{/home/paul/source/patadata/songs/tryo/}{ce_que_l_on_s_aime.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/tryo/l_hymne_de_nos_campagnes.sg
+
+\import{/home/paul/source/patadata/songs/tryo/}{l_hymne_de_nos_campagnes.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/vianney/pas_la.sg
+
+\import{/home/paul/source/patadata/songs/vianney/}{pas_la.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/vianney/je_te_deteste.sg
+
+\import{/home/paul/source/patadata/songs/vianney/}{je_te_deteste.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/vianney/je_m_en_vais.sg
+
+\import{/home/paul/source/patadata/songs/vianney/}{je_m_en_vais.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/yannick_noah/la_voix_des_sages.sg
+
+\import{/home/paul/source/patadata/songs/yannick_noah/}{la_voix_des_sages.sg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% songs/zebda/tomber_la_chemise.sg
+
+\import{/home/paul/source/patadata/songs/zebda/}{tomber_la_chemise.sg}
+
+\end{songs}
+
+
+
+
+\end{document}

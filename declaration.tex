@@ -1,0 +1,167 @@
+\documentclass[DIV=12,14pt]{scrartcl}
+\usepackage[french,english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{songs}
+\usepackage{suffix}
+\usepackage{hyperref}
+\usepackage[20pt]{extsizes}
+\renewcommand{\songtarget}[2]
+{\pdfbookmark[#1]{\thesongnum. \songtitle}{#2}}
+\renewcommand{\songlink}[2]{\hyperlink{#1}{#2}}
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{
+   \usepackage{url}
+   \newcommand{\phantomsection}{}
+   \newcommand{\hyperlink}[2]{#2}
+   \newcommand{\href}[2]{\expandafter\url\expandafter{#1}}
+}
+\makeatother
+\newenvironment{bridge}{\begin{verse*}\itshape}{\end{verse*}} 
+% \newenvironment{repeatedchords}{}{} 
+\def\cover{}
+\def\album{}
+\newcommand\utab[1]{}
+\newcommand\lilypond[1]{}
+\renewcommand\gtab[2]{}
+\WithSuffix\newcommand\gtab*[2]{}
+\def\Intro{Intro:}
+\def\Outro{Outro:}
+\def\Chorus{Refrain:}
+\def\Verse{Couplet:}
+\title{Carnet de chants}
+\author{Paul Ferrand}
+
+\newindex{titleidx}{titleidx}
+\newauthorindex{authidx}{authoridx}
+
+\authignoreword{unknown}
+\authbyword{by}
+\authsepword{and}
+\notenamesout{La}{Si}{Do}{R\'e}{Mi}{Fa}{Sol}
+
+\usepackage[sfdefault,condensed]{roboto}
+
+\makeatletter
+\renewcommand{\chorusfont}{\itshape}
+\def\@chordfont{\itshape}
+% \definecolor{ChordColor}{HTML}{000000}
+\renewcommand{\printchord}[1]{\@chordfont\textcolor{ChordColor}{#1}}
+\renewcommand{\lyricfont}{}
+\newsongkey{cover}{\let\songcover\@empty}{\def\songcover{#1}}
+\newsongkey{album}{\let\songalbum\@empty}{\def\songalbum{#1}}
+\newsongkey{url}{\let\songurl\@empty}{\def\songurl{#1}}
+\newsongkey{original}{\let\songoriginal\@empty}{\def\songoriginal{#1}}
+
+\newcommand{\CB@chordshidden}{%
+    \def\SB@bracket##1]{\ignorespaces}%
+    \let\SB@rechord\relax%
+    \let\SB@ch\SB@ch@off%
+    \ifSB@measurespec%
+    \ifmeasures\SB@measureson\else\SB@measuresoff\fi%
+    \else%
+    \SB@measuresoff%
+    \fi%
+    \ifSB@preamble\let\colbotglue{\z@\@plus.5\textheight}\fi%
+    \SB@setbaselineskip%
+}
+\newenvironment{repeatedchords}{\CB@chordshidden}{}
+\makeatother
+
+% Remove song numbers
+% \nosongnumbers
+% \renewcommand{\printsongnum}[1]{\Huge \bfseries \hspace{4pt}#1}
+
+\pagestyle{empty}
+
+% Shorter musicnotes
+\renewcommand\musicnote[1]{#1}
+\renewcommand\printchord[1]{\sffamily\itshape\footnotesize#1}
+
+% Show only authors
+\renewcommand{\extendprelude}{{\bfseries\showauthors}}
+
+% Denser verses
+\versesep=4pt
+\columnsep=4pt
+
+% Remove separating lines between songs and thinner chorus line
+\setlength{\sbarheight}{0pt}
+\setlength{\cbarwidth}{1pt}
+\renewcommand{\clineparams}{\lineskiplimit=1pt\lineskip=1pt}
+
+% Single spacing when no chords
+\setlength\baselineadj{-\baselineskip}
+\setlength{\versenumwidth}{0cm}
+
+\begin{document}
+\songcolumns{1}
+\begin{songs}{}
+\beginsong{La déclaration}
+\begin{verse}
+    \[Em]{C'est} un peu \[Am]une déclara\[G]tion
+    Que je te \[B7]fais, car il est \[Em]temps
+    Je \[Am]crois \[G B7]
+    Quand certains rêvent de nation
+    De football ou de vrais combats
+    \nolyrics{\[Am G B7]}
+  \end{verse}
+
+  \begin{verse*}
+    \[Em]Moi c'est vers \[Am]toi que je \[G]tends
+    Les bras quand \[B7]ça ne va pas
+    \[Em]Ma cervelle \[Am]et mes senti\[G]ments
+    Je te les \[B7]donne, ils sont pour \[Em]toi
+  \end{verse*}
+
+  \begin{verse*}
+    Le reste, on \[Am]en reparle\[G]ra \[B7] \rep{3}
+  \end{verse*}
+
+  \begin{chorus}
+    \[Em*]Pour vivre avec \[Am*]toi \[G* B7*]
+    Tu es mon \emph{chez moi}
+    Mon premier et mon second choix
+    Mon rêve d'absolu qui ne tarit pas
+  \end{chorus}
+
+  \begin{verse}
+    Je te dois mes premiers frissons
+    Et mes premiers coups sur les doigts
+    Mais pour un mot, une chanson
+    J'aurais donné n'importe quoi
+  \end{verse}
+
+  \begin{verse*}
+    Malgré tous mes démons
+    Les menottes que j'ai aux bras
+    Si je te quitte pour de bon
+    Le lendemain, je cours vers toi
+  \end{verse*}
+
+  \begin{verse*}
+    Le reste, on en reparlera
+  \end{verse*}
+
+
+  \begin{verse}
+    C'est un peu une déclaration
+    Même si je sais que tu n'es pas
+    Le remède, ni la solution
+    Tu n'es qu'une atèle à mon bras
+  \end{verse}
+
+  \begin{verse*}
+    Ce petit rien qui nous lie
+    Aux autres quand ça ne va pas
+    Un ultime langage de survie
+    Qui remet le monde à l'endroit
+  \end{verse*}
+
+  \begin{verse*}
+    Le reste, on en reparlera \rep{2}
+  \end{verse*}
+ \endsong
+\end{songs}
+\end{document}

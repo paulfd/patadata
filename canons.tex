@@ -1,0 +1,163 @@
+\documentclass[DIV=12,14pt]{scrartcl}
+\usepackage[french,english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{songs}
+\usepackage{suffix}
+\usepackage{hyperref}
+\usepackage[20pt]{extsizes}
+\renewcommand{\songtarget}[2]
+{\pdfbookmark[#1]{\thesongnum. \songtitle}{#2}}
+\renewcommand{\songlink}[2]{\hyperlink{#1}{#2}}
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{
+   \usepackage{url}
+   \newcommand{\phantomsection}{}
+   \newcommand{\hyperlink}[2]{#2}
+   \newcommand{\href}[2]{\expandafter\url\expandafter{#1}}
+}
+\makeatother
+\newenvironment{bridge}{\begin{verse*}\itshape}{\end{verse*}} 
+% \newenvironment{repeatedchords}{}{} 
+\def\cover{}
+\def\album{}
+\newcommand\utab[1]{}
+\newcommand\lilypond[1]{}
+\renewcommand\gtab[2]{}
+\WithSuffix\newcommand\gtab*[2]{}
+\def\Intro{Intro:}
+\def\Outro{Outro:}
+\def\Chorus{Refrain:}
+\def\Verse{Couplet:}
+\title{Carnet de chants}
+\author{Paul Ferrand}
+
+\newindex{titleidx}{titleidx}
+\newauthorindex{authidx}{authoridx}
+
+\authignoreword{unknown}
+\authbyword{by}
+\authsepword{and}
+\notenamesout{La}{Si}{Do}{R\'e}{Mi}{Fa}{Sol}
+
+\usepackage[sfdefault,condensed]{roboto}
+
+\makeatletter
+\renewcommand{\chorusfont}{\itshape}
+\def\@chordfont{\itshape}
+% \definecolor{ChordColor}{HTML}{000000}
+\renewcommand{\printchord}[1]{\@chordfont\textcolor{ChordColor}{#1}}
+\renewcommand{\lyricfont}{}
+\newsongkey{cover}{\let\songcover\@empty}{\def\songcover{#1}}
+\newsongkey{album}{\let\songalbum\@empty}{\def\songalbum{#1}}
+\newsongkey{url}{\let\songurl\@empty}{\def\songurl{#1}}
+\newsongkey{original}{\let\songoriginal\@empty}{\def\songoriginal{#1}}
+
+\newcommand{\CB@chordshidden}{%
+    \def\SB@bracket##1]{\ignorespaces}%
+    \let\SB@rechord\relax%
+    \let\SB@ch\SB@ch@off%
+    \ifSB@measurespec%
+    \ifmeasures\SB@measureson\else\SB@measuresoff\fi%
+    \else%
+    \SB@measuresoff%
+    \fi%
+    \ifSB@preamble\let\colbotglue{\z@\@plus.5\textheight}\fi%
+    \SB@setbaselineskip%
+}
+\newenvironment{repeatedchords}{\CB@chordshidden}{}
+\makeatother
+
+% Remove song numbers
+% \nosongnumbers
+% \renewcommand{\printsongnum}[1]{\Huge \bfseries \hspace{4pt}#1}
+
+\pagestyle{empty}
+
+% Shorter musicnotes
+\renewcommand\musicnote[1]{#1}
+\renewcommand\printchord[1]{\sffamily\itshape\footnotesize#1}
+
+% Show only authors
+\renewcommand{\extendprelude}{{\bfseries\showauthors}}
+
+% Denser verses
+\versesep=4pt
+\columnsep=4pt
+
+% Remove separating lines between songs and thinner chorus line
+\setlength{\sbarheight}{0pt}
+\setlength{\cbarwidth}{1pt}
+\renewcommand{\clineparams}{\lineskiplimit=1pt\lineskip=1pt}
+
+% Single spacing when no chords
+\setlength\baselineadj{-\baselineskip}
+\setlength{\versenumwidth}{0cm}
+
+\begin{document}
+\songcolumns{1}
+\begin{songs}{}
+\beginsong{Vent frais}
+  \begin{verse*}
+    \[Am]Vent \[Em]frais
+    \[Am]Vent du ma\[Em]tin
+    \[Am]Vent qui \[Em]souffle
+    Au \[Am]sommet des grands \[Em]pins
+    \[Am]Joie du \[Em]vent qui \[Am]souffle
+    A\[Em]llons dans le grand \dots
+  \end{verse*}
+\endsong
+\beginsong{Une bulle vole}
+  \begin{verse*}
+    \[D]Une bulle \[G]bul - \[A]le \[D]vole
+    \[D]Quatre bulles \[G]bulles s'\[A]e - en\[D]volent
+    \[D]Des milliers de \[G]bulles \[A]dansent en faran\[D]dole
+    \[D]Une bulle \[G]bul - \[A]le \[D]vole
+  \end{verse*}
+\endsong
+\beginsong{Bonsoir tous \`a la ronde}
+  \begin{verse*}
+  \[Em]Bonsoir  tous \[Am]\`a la \[Em]ronde 
+  \[Em]Que la paix  soit \[Am]dans le \[Em]monde
+  \[Em]Dans la nuit  calme \[Am]et se\[Em]reine
+  \[Em]  L'homme \[Am]sans \[Em]haine 
+  \end{verse*}
+\endsong
+\beginsong{Chant du feu}
+  \begin{verse*}
+    \[C]Entendez-vous \[G]dans le \[C]feu
+    \[C]Tous ces bruits mys\[G]t\'eri\[C]eux?
+    \[C]Ce sont les tisons du \[G]feu qui \[C]chantent
+    \[C]Fr\`ere, fr\`ere, \[G]sois jo\[C]yeux!
+  \end{verse*}
+\endsong
+\beginsong{Terre rouge}
+\begin{verse*}
+  \[Em]Terre \[Am]rouge, \[Bm]terre de \[Em]feu
+  \[Em]Terre, \[Am]terre, \[Bm]terre de lu\[Em]mi\`ere
+  \[Em]Terre \[Am]rouge \[Bm]sous le ciel \[Em]bleu
+\end{verse*}
+\endsong
+\beginsong{Ensemble}
+\begin{verse*}
+  \[B&]Souviens-toi \[F]
+  \[Dm]\'Etait-ce mai, \[C] novembre
+  I\[B&]ci ou \[F]l\`a ?
+  \'Etait-\[Dm]ce un lun \[C] di ?
+  Je \[B&]ne me souviens \[F] que d'un mur \[Dm] immense \[C]
+  Mais nous \[B&]\'etions ensemble \[F]
+  Ensem\[Dm]ble, nous \[C]l'avons franchi.
+\end{verse*}
+\begin{verse*}
+  \[B&]Reviens-moi \[F]
+  \[Dm]De tes voyages \[C] si loin
+  \[B&]Reviens-\[F]moi
+  Tout s'a \[Dm]- joute \`a ma \[C] vie
+  J'ai \[B&]besoin de nos \[F] chemins qui \[Dm] se croisent \[C]
+  Quand le \[B&]temps nous rassemble \[F]
+  Ensem\[Dm]ble, tout \[C]est plus joli.
+\end{verse*}
+\endsong
+\end{songs}
+\end{document}
